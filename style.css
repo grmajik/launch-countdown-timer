@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+   border: 0;
+   padding: 0;
+   outline: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+html {
+   text-rendering: optimizeLegibility;
+}
+
+body {
+   font-size: 14px;
+   color: hsl(0, 0%, 100%);
+   font-family: 'Red Hat Text', sans-serif;
+}
+
+.main {
+   height: 100vh;
+   width: auto;
+   background-position: bottom, center;
+   background-repeat: no-repeat;
+   background-image:
+      url(images/pattern-hills.svg),
+      url(images/bg-stars.svg),
+      linear-gradient(to bottom, #1e1e28, 70%, #231d2b);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+}
+
+.main h3 {
+   position: relative;
+   text-transform: uppercase;
+   top: 100px;
+   font-size: 24px;
+   letter-spacing: 8px;
+   margin-top: 70px;
+}
+
+.countdown {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.scene {
+   margin: 0 20px;
+}
+
+.text {
+   font-size: 78px;
+   background: linear-gradient(#d44e71 50%, #fa5e86 50%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-align: center;
+}
+
+.test {
+   display: block;
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 16px;
+   margin-top: 20px;
+   letter-spacing: 5px;
+   color: hsl(0, 0%, 50%);
+}
+
+.box {
+   margin: 0 20px;
+   width: 150px;
+   height: 150px;
+   background: linear-gradient(to bottom, #2c2c44 50%, #34364f 50%);
+   position: relative;
+   border-radius: 10px;
+}
+
+.hemisphere-left {
+   position: absolute;
+   top: 50%;
+   left: 1.7px;
+   transform: translate(-50%, -50%);
+   height: 12px;
+   width: 6px;
+   border-radius: 0 150px 150px 0;
+   background-color: #1a1c24;
+}
+
+.hemisphere-right {
+   position: absolute;
+   top: 50%;
+   right: -3px;
+   transform: translate(-50%, -50%) rotate(180deg);
+   height: 12px;
+   width: 6px;
+   border-radius: 0 150px 150px 0;
+   background-color: #1a1c24;
+}
+
+.social {
+   font-size: 40px;
+   width: 250px;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+
+   margin-bottom: 60px;
+}
+
+.social a:link {
+   color: hsl(237, 18%, 59%);
+   transition: all .4s;
+}
+
+.social a:visited,
+.social a:active {
+   color: hsl(237, 18%, 59%);
+}
+
+.social a:hover {
+   color: #d44e71;
+}
+
+.scene {
+   width: 150px;
+   height: 150px;
+   perspective: 600px;
+}
+
+.card {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   transition: transform 1s;
+   transform-style: preserve-3d;
+}
+
+.flipCard {
+   transform: rotateX(-180deg);
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.card__face {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   backface-visibility: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.card__face--front {
+   background: linear-gradient(to bottom, #2c2c44 50%, #34364f 50%);
+}
+
+.card__face--back {
+   transform: rotateX(180deg);
+   background: linear-gradient(to bottom, #2c2c44 50%, #34364f 50%);
+}
+
+@media only screen and (min-width: 1441px) {
+   .main {
+      background-size: contain, cover;
+   }
+}
+
+@media only screen and (max-width: 1440px) {
+   .main {
+      background-size: 1440px contain, cover;
+   }
+}
+
+@media only screen and (max-width: 840px) {
+   .countdown {
+      transform: scale(.8);
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   .countdown {
+      transform: scale(.6);
+   }
+
+   .main h3 {
+      font-size: 18px;
+   }
+}
+
+@media only screen and (max-width: 450px) {
+   .countdown {
+      transform: scale(.5);
+   }
+
+   .main h3 {
+      font-size: 15px;
+      letter-spacing: 3px;
+   }
+}
